@@ -6,6 +6,8 @@ on:
     branches: [ master ]
 jobs:
   build-with-gradle-build-action-cache:
+    outputs:
+      hashes: ${{ steps.hash.outputs.hashes }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
