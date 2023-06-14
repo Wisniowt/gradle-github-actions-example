@@ -52,7 +52,7 @@ jobs:
 
   showhash:
     needs: [build-with-gradle-build-action-cache]
-    runs-on: [self-hosted, ubuntu-latest, linux, x64, gpu]
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       id-token: write
