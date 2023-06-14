@@ -49,7 +49,7 @@ jobs:
           
       - name: Do show hash
         shell: bash
-        id: show hash
+        id: show-hash
         run: echo "${{ needs.build.outputs.hashes }}"
           
           
