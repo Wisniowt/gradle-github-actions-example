@@ -49,7 +49,15 @@ jobs:
           path: build/libs/gradle-github-actions-example.jar
           if-no-files-found: error
           retention-days: 5
-          
+
+  showhash:
+    needs: [build-with-gradle-build-action-cache]
+    runs-on: [self-hosted, ubuntu-latest, linux, x64, gpu]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    steps:
       - name: Do show hash
         shell: bash
         id: show-hash
