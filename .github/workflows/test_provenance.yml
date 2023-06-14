@@ -17,3 +17,17 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           arguments: build --scan
+          
+      - name: Do LS
+        shell: bash
+        id: ls
+        run: ls
+        
+      - name: Generate hashes
+        shell: bash
+        id: hash
+        run: |
+          # sha256sum generates sha256 hash for all artifacts.
+          # base64 -w0 encodes to base64 and outputs on a single line.
+          # sha256sum artifact1 artifact2 ... | base64 -w0
+          echo "hashes=$(sha256sum artifact1 artifact2 | base64 -w0)" >> "$GITHUB_OUTPUT"
