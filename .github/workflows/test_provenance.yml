@@ -23,7 +23,10 @@ jobs:
         id: ls
         run: |
               ls
+              echo "//////////////////////////"
               ls build
+              echo "//////////////////////////"
+              ls build/generated
         
       - name: Generate hashes
         shell: bash
