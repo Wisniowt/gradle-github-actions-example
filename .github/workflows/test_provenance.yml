@@ -47,6 +47,11 @@ jobs:
           if-no-files-found: error
           retention-days: 5
           
+      - name: Do show hash
+        shell: bash
+        id: show hash
+        run: echo "${{ needs.build.outputs.hashes }}"
+          
           
             # This step calls the generic workflow to generate provenance.
   provenance:
