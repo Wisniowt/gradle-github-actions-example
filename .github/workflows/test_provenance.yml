@@ -50,7 +50,7 @@ jobs:
       - name: Do show hash
         shell: bash
         id: show-hash
-        run: echo "${{ needs.build.outputs.hashes }}"
+        run: echo "${{ needs.build-with-gradle-build-action-cache.outputs.hashes }}"
           
           
             # This step calls the generic workflow to generate provenance.
