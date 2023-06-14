@@ -27,6 +27,8 @@ jobs:
               ls build
               echo "//////////////////////////"
               ls build/generated
+              echo "//////////////////////////"
+              ls build/libs
         
       - name: Generate hashes
         shell: bash
