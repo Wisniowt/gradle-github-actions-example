@@ -1,4 +1,4 @@
-name: CI
+name: CI-Test-Provenance
 on:
   push:
     branches: [ master ]
@@ -21,7 +21,9 @@ jobs:
       - name: Do LS
         shell: bash
         id: ls
-        run: ls
+        run: |
+              ls
+              ls build
         
       - name: Generate hashes
         shell: bash
